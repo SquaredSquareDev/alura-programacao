@@ -37,6 +37,15 @@ html {
 
 }
 
+.box-letras-digitadas {
+
+    background-color: #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+
+}
+
 .titulo {
 
     font-size: 24px;
@@ -109,7 +118,7 @@ html {
 
 }
 
-.letras-digitadas {
+.box-letras-digitadas {
 
     position: absolute;
     top: 30px;
@@ -117,7 +126,7 @@ html {
 
 }
 
-.letras-digitadas h2 {
+.box-letras-digitadas h2 {
 
     font-size: 24px;
     margin-bottom: 30px;

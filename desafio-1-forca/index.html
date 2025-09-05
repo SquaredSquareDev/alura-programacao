@@ -21,16 +21,16 @@
                 <div class="formulario">
                     <label for="palavra-secreta">Digite a palavra secreta:</label>
                     <input class="input-padrao" id="palavra-secreta" type="text" maxlength="50">
-                    <button class="botao">Iniciar jogo</button>
+                    <button  onclick="escolherPalavraSecreta()" class="botao">Iniciar jogo</button>
                 </div>
             </div>
 
             <!-- Descoberta da palavra secreta -->
-            <div class="descoberta-palavra" style="display: block;">
+            <div class="descoberta-palavra" style="display: none;">
 
                 <!-- Forca -->
                 <div class="forca">
-                    <img src="imagens/forca.avif" alt="Erros">
+                    <img src="imagens/0 erros.jpg" alt="Erros">
                 </div>
 
                 <!-- Palavra com as letras já descobertas -->
@@ -42,7 +42,7 @@
                 <div class="entrada-letras formulario">
                     <label for="letras">Digite uma letra:</label>
                     <input class="input-padrao" id="letras" type="text" maxlength="1">
-                    <button class="botao">Enviar</button>
+                    <button onclick="chutarLetra()" class="botao">Enviar</button>
                 </div>
 
                 <!-- Botão para reiniciar o jogo -->
@@ -54,17 +54,18 @@
 
         </section>
 
-        <section class="box letras-digitadas" style="display: block;">
+        <section class="box-letras-digitadas" style="display: none;">
 
             <!-- Letras já digitadas -->
             <div class="letras-digitadas-wrapper">
                 <h2>Letras já digitadas</h2>
-                <div class="letras"></div>
+                <div class="letras" id="letrasChutadas"></div>
             </div>
             
         </section>
 
     </div>
 
+    <script src="app.js" defer></script>
 </body>
 </html>

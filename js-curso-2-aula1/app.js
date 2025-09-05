@@ -53,6 +53,7 @@ function verificarChute() {
         }
     }
 
+    console.log(chute);
 }
 
 // Botão de reiniciar
