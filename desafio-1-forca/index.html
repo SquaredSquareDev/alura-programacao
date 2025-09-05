@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Jogo da Forca</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <section class="box">
+
+            <h1 class="titulo">Jogo da Forca</h1>
+            
+            <!-- Entrada da palavra secreta -->
+            <div class="entrada-palavra-secreta" style="display: block;">
+                <div class="formulario">
+                    <label for="palavra-secreta">Digite a palavra secreta:</label>
+                    <input class="input-padrao" id="palavra-secreta" type="text" maxlength="50">
+                    <button class="botao">Iniciar jogo</button>
+                </div>
+            </div>
+
+            <!-- Descoberta da palavra secreta -->
+            <div class="descoberta-palavra" style="display: block;">
+
+                <!-- Forca -->
+                <div class="forca">
+                    <img src="imagens/forca.avif" alt="Erros">
+                </div>
+
+                <!-- Palavra com as letras já descobertas -->
+                <div class="letras-descobertas">
+                    <!-- <span class="letra">_</span> -->
+                </div>
+
+                <!-- Entrada de letras -->
+                <div class="entrada-letras formulario">
+                    <label for="letras">Digite uma letra:</label>
+                    <input class="input-padrao" id="letras" type="text" maxlength="1">
+                    <button class="botao">Enviar</button>
+                </div>
+
+                <!-- Botão para reiniciar o jogo -->
+                <div class="reiniciar-jogo">
+                    <button class="botao" disabled>Reiniciar jogo</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="box letras-digitadas" style="display: block;">
+
+            <!-- Letras já digitadas -->
+            <div class="letras-digitadas-wrapper">
+                <h2>Letras já digitadas</h2>
+                <div class="letras"></div>
+            </div>
+            
+        </section>
+
+    </div>
+
+</body>
+</html>
