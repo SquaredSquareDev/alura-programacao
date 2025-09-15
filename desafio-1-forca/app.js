@@ -1,5 +1,6 @@
 // Declarar variaveis
-let palavraSecreta;
+let palavraSecreta = [];
+let letrasDescobertas = [];
 let letrasChutadas = [];
 let mostrarChutes = document.getElementById('letrasChutadas');
 let imagemErros = 0;
@@ -17,7 +18,13 @@ function escolherPalavraSecreta() {
     console.log(palavra);
 
     if (palavra != '') {
-        palavraSecreta = palavra;
+        palavraSecreta = palavra.split('');
+        letrasDescobertas = palavraSecreta.map(function(letra) {
+            return '_';
+        })
+
+        console.log(palavraSecreta);
+        console.log(letrasDescobertas);
 
         // Muda para a tela de adivinhação
         document.querySelector('.entrada-palavra-secreta').style.display = 'none';
@@ -50,6 +57,8 @@ function chutarLetra() {
     if (temDuplicado(letrasChutadas) == false) {
          if (palavraSecreta.includes(chute)) {
             console.log('yay');
+            atualizarLetrasDescobertas()
+            verificaSeGanhou()
         } else {
             if (imagemErros < 5) {    
                 proximaImagem();
@@ -68,6 +77,24 @@ function chutarLetra() {
     mostrarChutes.innerText = letrasChutadas.join(", ");
 }
 
+function atualizarLetrasDescobertas() {
+
+    for (let i = 0; i < palavraSecreta.length; i++) {
+        if (palavraSecreta[i] == letrasChutadas[letrasChutadas.length - 1]) {
+            letrasDescobertas[i] = letrasChutadas[letrasChutadas.length - 1];
+            document.querySelectorAll('.letra')[i].innerHTML = letrasDescobertas[i];
+        }
+    }
+
+}
+
+function verificaSeGanhou() {
+    if (letrasDescobertas.indexOf('_') == -1) {
+        document.querySelector('h1').innerHTML = 'Parabéns, vocé ganhou!';
+        document.getElementById('reiniciar').removeAttribute('disabled');
+    }
+}
+
 // Reinicia o jogo
 function reiniciar() {
     imagemErros = 0;
@@ -78,3 +105,8 @@ function reiniciar() {
     document.querySelector('.box-letras-digitadas').style.display = 'none';
     document.querySelector('.descoberta-palavra').style.display = 'none';
 }
+
+// TODO: Fazer o reiniciar jogo funcionar
+// TODO: Tratar espaços antes e depois da palavra no input
+// TODO: Fazer o <enter> funcionar em todos formulários
+// TODO: Limpar o input de chutes de letras após o jogador enviar a letra
