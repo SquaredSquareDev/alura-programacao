@@ -21,7 +21,7 @@
                 <div class="formulario">
                     <label for="palavra-secreta">Digite a palavra secreta:</label>
                     <input class="input-padrao" id="palavra-secreta" type="text" maxlength="50">
-                    <button  onclick="escolherPalavraSecreta()" class="botao">Iniciar jogo</button>
+                    <button  onclick="escolherPalavraSecreta()" class="botao" id="botao-secreto">Iniciar jogo</button>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                 <div class="entrada-letras formulario">
                     <label for="letras">Digite uma letra:</label>
                     <input class="input-padrao" id="letras" type="text" maxlength="1">
-                    <button onclick="chutarLetra()" class="botao">Enviar</button>
+                    <button id="botao-letras" onclick="chutarLetra()" class="botao">Enviar</button>
                 </div>
 
                 <!-- Botão para reiniciar o jogo -->
