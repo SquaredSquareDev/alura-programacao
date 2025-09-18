@@ -20,7 +20,7 @@
             <div class="entrada-palavra-secreta" style="display: block;">
                 <form onsubmit="escolherPalavraSecreta(event)" class="formulario">
                     <label for="palavra-secreta">Digite a palavra secreta:</label>
-                    <input class="input-padrao" id="palavra-secreta" type="text" maxlength="50">
+                    <input class="input-padrao" id="palavra-secreta" type="text" maxlength="50" required pattern="^[a-zA-Z]+$">
                     <button type="submit" class="botao" id="botao-secreto">Iniciar jogo</button>
                 </form>
             </div>
