@@ -39,11 +39,11 @@
                 </div>
 
                 <!-- Entrada de letras -->
-                <div class="entrada-letras formulario">
+                <form onsubmit="chutarLetra(event)" class="entrada-letras formulario">
                     <label for="letras">Digite uma letra:</label>
-                    <input class="input-padrao" id="letras" type="text" maxlength="1">
-                    <button id="botao-letras" onclick="chutarLetra()" class="botao">Enviar</button>
-                </div>
+                    <input class="input-padrao" id="letras" type="text" maxlength="1" required pattern="^[a-zA-Z]+$">
+                    <button type="submit" id="botao-letras" class="botao">Enviar</button>
+                </form>
 
                 <!-- Botão para reiniciar o jogo -->
                 <div class="reiniciar-jogo">

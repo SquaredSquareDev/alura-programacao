@@ -13,19 +13,6 @@ function temDuplicado(arr) {
 
 }
 
-let myInput = document.querySelector('#palavra-secreta');
-let myButton = document.querySelector('#botao-secreto');
-
-// myInput.addEventListener('keydown', function(event) {
-
-//     if (event.key === "enter") {
-
-//         myButton.click();
-
-//     }
-
-// });
-
 // Inicio do jogo (jogador 1 escolhe a palavra)
 function escolherPalavraSecreta(e) {
 
@@ -54,7 +41,7 @@ function escolherPalavraSecreta(e) {
         // Mostra quantas letras tem
         for(let i = 0; i < palavraSecreta.length; i++){
 
-            document.querySelector('.letras-descobertas').insertAdjacentHTML("beforeend", '<span class="letra">_</span>');
+            document.querySelector('.letras-descobertas').insertAdjacentHTML("beforeend", '<span class="letraAdivinhacao">_</span>');
 
         }
 
@@ -63,8 +50,6 @@ function escolherPalavraSecreta(e) {
         alert('Digite uma palavra');
 
     }
-
-    inputEnter('#palavra-secreta', '#botao-secreto');
 
 }
 
@@ -78,7 +63,9 @@ function proximaImagem() {
 }
 
 // O jogo em si (jogador 2 descobre a palavra)
-function chutarLetra() {
+function chutarLetra(e) {
+
+    e.preventDefault();
 
     let chute = document.querySelector('#letras').value;
     letrasChutadas.push(chute);
@@ -115,7 +102,6 @@ function chutarLetra() {
 
     }
 
-    inputEnter('#letras', '#botao-letras');
     limparCampo('#letras');
     mostrarChutes.innerText = letrasChutadas.join(", ");
 
@@ -128,7 +114,7 @@ function atualizarLetrasDescobertas() {
 
         if (palavraSecreta[i] == letrasChutadas[letrasChutadas.length - 1]) {
             letrasDescobertas[i] = letrasChutadas[letrasChutadas.length - 1];
-            document.querySelectorAll('.letra')[i].innerHTML = letrasDescobertas[i];
+            document.querySelectorAll('.letraAdivinhacao')[i].innerHTML = letrasDescobertas[i];
 
         }
 
@@ -160,12 +146,19 @@ function limparCampo(input) {
 function reiniciar() {
 
     limparCampo('#palavra-secreta');
+    
+    // Reiniciar variavei
     imagemErros = 0;
     letrasChutadas = [];
     palavraSecreta = [];
     letrasDescobertas = [];
     imagem = `imagens/${imagemErros} erros.jpg`;
     palavraSecreta = null;
+
+    // Deleta os _
+    document.querySelector('.letras-descobertas').innerHTML = '';
+
+    // Trocar para tela de input da palavra
     document.querySelector('.entrada-palavra-secreta').style.display = 'block';
     document.querySelector('.box-letras-digitadas').style.display = 'none';
     document.querySelector('.descoberta-palavra').style.display = 'none';
@@ -193,4 +186,4 @@ function inputEnter(input, button) {
 // TODO: Fazer o reiniciar jogo funcionar
 // TODO: Tratar espaços antes e depois da palavra no input
 // TODO: Fazer o <enter> funcionar em todos formulários
-// TODO: Limpar o input de chutes de letras após o jogador enviar a letra
+// TODO: Limpar o input de chutes de letras após o jogador enviar a letra - feito
