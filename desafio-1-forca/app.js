@@ -155,8 +155,9 @@ function reiniciar() {
     imagem = `imagens/${imagemErros} erros.jpg`;
     palavraSecreta = null;
 
-    // Deleta os _
+    // Limpa os campos
     document.querySelector('.letras-descobertas').innerHTML = '';
+    mostrarChutes.innerText = '';
 
     // Trocar para tela de input da palavra
     document.querySelector('.entrada-palavra-secreta').style.display = 'block';
