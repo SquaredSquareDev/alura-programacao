@@ -18,11 +18,11 @@
             
             <!-- Entrada da palavra secreta -->
             <div class="entrada-palavra-secreta" style="display: block;">
-                <div class="formulario">
+                <form onsubmit="escolherPalavraSecreta(event)" class="formulario">
                     <label for="palavra-secreta">Digite a palavra secreta:</label>
                     <input class="input-padrao" id="palavra-secreta" type="text" maxlength="50">
-                    <button  onclick="escolherPalavraSecreta()" class="botao" id="botao-secreto">Iniciar jogo</button>
-                </div>
+                    <button type="submit" class="botao" id="botao-secreto">Iniciar jogo</button>
+                </form>
             </div>
 
             <!-- Descoberta da palavra secreta -->

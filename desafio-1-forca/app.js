@@ -16,18 +16,20 @@ function temDuplicado(arr) {
 let myInput = document.querySelector('#palavra-secreta');
 let myButton = document.querySelector('#botao-secreto');
 
-myInput.addEventListener('keydown', function(event) {
+// myInput.addEventListener('keydown', function(event) {
 
-    if (event.key === "enter") {
+//     if (event.key === "enter") {
 
-        myButton.click();
+//         myButton.click();
 
-    }
+//     }
 
-});
+// });
 
 // Inicio do jogo (jogador 1 escolhe a palavra)
-function escolherPalavraSecreta() {
+function escolherPalavraSecreta(e) {
+
+    e.preventDefault();
 
     // Pega a palavra escolhida
     let palavra = document.querySelector('#palavra-secreta').value;
