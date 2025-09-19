@@ -90,6 +90,8 @@ function chutarLetra(e) {
                 proximaImagem();
                 document.querySelector('h1').innerHTML = "Você perdeu!";
                 document.getElementById('reiniciar').removeAttribute('disabled');
+                document.querySelector('#letras').setAttribute('disabled', true);
+                document.querySelector('#botao-letras').setAttribute('disabled', true);
 
             }
 
