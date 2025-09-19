@@ -28,6 +28,13 @@ html {
 
 }
 
+.credits {
+
+    margin: 7px auto;
+    font-size: 14px;
+
+}
+
 .box {
 
     background-color: #fff;
@@ -82,6 +89,13 @@ html {
 
     background-color: #fff;
     border-color: #35614c;
+
+}
+
+.input-padrao:disabled {
+
+    background-color: #aaa;
+    cursor: not-allowed;
 
 }
 

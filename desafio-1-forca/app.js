@@ -37,6 +37,8 @@ function escolherPalavraSecreta(e) {
         document.querySelector('.box-letras-digitadas').style.display = 'block';
         document.querySelector('.descoberta-palavra').style.display = 'block';
         document.querySelector('img').setAttribute('src', imagem);
+        document.querySelector('#letras').removeAttribute('disabled');
+        document.querySelector('#botao-letras').removeAttribute('disabled');
 
         // Mostra quantas letras tem
         for(let i = 0; i < palavraSecreta.length; i++){
@@ -74,7 +76,6 @@ function chutarLetra(e) {
 
          if (palavraSecreta.includes(chute)) {
 
-            console.log('yay');
             atualizarLetrasDescobertas()
             verificaSeGanhou()
 
@@ -83,7 +84,6 @@ function chutarLetra(e) {
             if (imagemErros < 5) {    
 
                 proximaImagem();
-                console.log(':(');
 
             } else {
 
@@ -129,6 +129,8 @@ function verificaSeGanhou() {
 
         document.querySelector('h1').innerHTML = 'Parabéns, vocé ganhou!';
         document.getElementById('reiniciar').removeAttribute('disabled');
+        document.querySelector('#letras').setAttribute('disabled', true);
+        document.querySelector('#botao-letras').setAttribute('disabled', true);
 
     }
 
@@ -166,25 +168,3 @@ function reiniciar() {
     document.querySelector('h1').innerHTML = 'Jogo da Forca';
 
 }
-
-function inputEnter(input, button) {
-
-    let myInput = document.querySelector(input);
-    let myButton = document.querySelector(button);
-
-    myInput.addEventListener('keydown', function(event) {
-
-        if (event.key === "enter") {
-
-            myButton.click();
-
-        }
-
-    });
-
-}
-
-// TODO: Fazer o reiniciar jogo funcionar
-// TODO: Tratar espaços antes e depois da palavra no input
-// TODO: Fazer o <enter> funcionar em todos formulários
-// TODO: Limpar o input de chutes de letras após o jogador enviar a letra - feito
